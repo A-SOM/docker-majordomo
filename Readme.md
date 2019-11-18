@@ -33,7 +33,7 @@ todo сделать её внятней.
 `sudo apt get update && sudo apt-get install docker docker-compose && sudo usermod -aG docker $USER && reboot`
  5. Запускаем сборку и подгружаем базу данных. У вас спросят удалять ли базу данных. Соглашаемся.
 `make install && make init-db`
- 6. Настраиваем в ./app config.php. Учтите, host теперь: 127.0.0.1(а не localhost) и перезапускаем, что бы cycle запустился корректно(в будущем не потребуется)
+ 6. Настраиваем в ./app config.php. Учтите, host mysql теперь: 127.0.0.1(а не localhost) и в Define('BASE_URL указываем ваш ip-адрес системы.
 `cp -f ./app/config.php.sample ./app/config.php && nano ./app/config.php`
  7. Перезапускам всё, что бы заново иницилизировать cycle.
  8. Открываем 127.0.0.1 или localhost или ip где запущен докер. Радуемся.
