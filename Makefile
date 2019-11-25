@@ -21,8 +21,8 @@ init: build up
 install: build up
 
 clone_code: ## git clone code
-	@ make -p ./app
-	@ make -p ./db-data
+	@ mkdir -p ./app
+	@ mkdir -p ./db-data
 	@ git clone https://github.com/sergejey/majordomo.git ./app
 pull: ## git pull cod
 	@ cd ./app | git pull
