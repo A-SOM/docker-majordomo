@@ -1,7 +1,7 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 RUN apt-get update
 RUN apt-get install nginx git iputils-ping -y
-RUN apt-get install php php-cgi php-cli php-pear php-mysql php-mbstring php-xml php-fpm curl libcurl3 libcurl3-dev php-curl -y
+RUN apt-get install php php-cgi php-cli php-pear php-mysql php-mbstring php-xml php-fpm curl libcurl4 libcurl4-openssl-dev php-curl php-gd -y
 RUN        apt-get -y install supervisor && \
            mkdir -p /var/log/supervisor && \
            mkdir -p /etc/supervisor/conf.d
