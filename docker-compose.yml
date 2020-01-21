@@ -7,7 +7,7 @@ services:
     network_mode: "host"
     restart: always
   mysql:
-    image: mariadb
+    image: linuxserver/mariadb
     ports:
       - '3306:3306'
     volumes:
