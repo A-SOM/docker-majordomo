@@ -2,14 +2,19 @@ version: '2'
 services:
   majordomo:
     build: ./app-conf/debian/
+    container_name: majordomo_${PROJECT_NAME}_os
+    ports:
+      - "${MAJORDOMO_NGINX_PORT}:80"
+      - "${MAJORDOMO_UI_PORT}:8001"
     volumes:
       - './app:/var/www/html'
     network_mode: "host"
     restart: always
   mysql:
     image: linuxserver/mariadb
+    container_name: majordomo_${PROJECT_NAME}_mysql
     ports:
-      - '3306:3306'
+      - "${MYSQL_EXPOSE_PORT}:3306"
     volumes:
       - ./db-data:/var/lib/mysql
       - ./app-conf/debian/mysql:/etc/mysql
